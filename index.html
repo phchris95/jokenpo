@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DevClub - Projeto Jokenpô</title>
+</head>
+<body>
+
+    <div class="container-player">
+
+        <h1>Jogo do Jokenpô</h1>
+
+        <h2>Jogador:</h2>
+
+        <div class="button-container">
+
+            <button id="rock" onclick="playHuman('rock')">&#x1F44A;</button>
+            <button id="paper" onclick="playHuman('paper')">&#x1F91A;</button>
+            <button id="scissors" onclick="playHuman('scissors')">&#x270C;</button>
+
+        </div>
+
+        <div class="machine-container">
+
+            <h2>Máquina:</h2>
+            <div class="machine-result">
+
+                <p class="play-machine-result">&#x1F44A;</p>
+
+            </div>
+
+        </div>
+
+        <p class="result"></p>
+
+        <p class="personal-score">Sua pontuação é: <span id="human-point">0</span></p>
+        <p class="machine-score">Pontuação da máquina é: <span id="machine-point">0</span></p>
+
+        <button class="reset" onclick="resetButton()">Reset</button>
+
+    </div>
+
+    <script src="./scripts.js"></script>
+    
+</body>
+</html>
