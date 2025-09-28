@@ -6,6 +6,20 @@ const playMachineResult = document.querySelector('.play-machine-result')
 let personalScore = 0
 let machineScore = 0
 
+/* 
+    ENUM -> Criamos essa variaável para unificar as variaveis que usamos em nosso código, pois assim quando tivermos que 
+    fazermos alguma modificação, mudamos em apenas um só lugar
+
+    machineScore  -> Padrão Camel Case
+    GAME_OPTIONS  -> Padrão Snake Case
+*/
+const GAME_OPTIONS = {
+
+    ROCK: 'rock',
+    PAPER: 'paper',
+    SCISSORS: 'scissors'
+
+}
 const playHuman = (humanChoice) => {
 
     playerGame(humanChoice, playMachine())
@@ -14,7 +28,7 @@ const playHuman = (humanChoice) => {
 
 const playMachine = () => {
 
-    const options = ["rock", "paper", "scissors"]
+    const options = [GAME_OPTIONS.ROCK, GAME_OPTIONS.PAPER, GAME_OPTIONS.SCISSORS]
 
     let numberRandon = Math.floor(Math.random() * 3)
 
@@ -43,9 +57,9 @@ const playerGame = (human, machine) => {
 
         result.innerHTML = 'empatou'
 
-    } else if ((human === 'rock' && machine === 'scissors') ||
-        (human === 'paper' && machine === 'rock') ||
-        (human === 'scissors' && machine === 'paper')) {
+    } else if ((human === GAME_OPTIONS.ROCK && machine === GAME_OPTIONS.SCISSORS) ||
+        (human === GAME_OPTIONS.PAPER && machine === GAME_OPTIONS.ROCK) ||
+        (human === GAME_OPTIONS.SCISSORS && machine === GAME_OPTIONS.PAPER)) {
 
         result.innerHTML = 'ganhou'
         personalScore = personalScore + 1
